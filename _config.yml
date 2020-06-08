@@ -5,7 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   for  Desktop, Wep,  Mobile, and  Game  dev. I  have  good  experience  on  Pentesting, 
   Reverse  and  Malware  analysis
 permalink: ':title/'
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://khanafeer.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: #if your site has a twitter account, enter it here
 
