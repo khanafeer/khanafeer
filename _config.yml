@@ -1,0 +1,38 @@
+title: Cyber Security Specialist
+description: > # this means to ignore newlines until "baseurl:"
+  I  have the knowledge of building systems,  attacking them, and investigating back.
+  I have knowledge at networking,  administration, and 2  years of programming  experience 
+  for  Desktop, Wep,  Mobile, and  Game  dev. I  have  good  experience  on  Pentesting, 
+  Reverse  and  Malware  analysis
+permalink: ':title/'
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://khanafeer.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+site-twitter: #if your site has a twitter account, enter it here
+
+# Author Settings
+author: Abd Elnaser Khanafeer # add your name
+author-img: khanafeer.jpg # add your photo
+about-author: I am a cybersecurity specialist practicing Red Teaming and Blue Teaming. # add description
+social-twitter: khanafeer
+social-facebook: naser.khanfeer
+social-github: khanafeer # add your Github handle
+social-linkedin: khanafeer
+social-email: naser.khanafeer@mail.com # add your Email address
+
+# Disqus
+discus-identifier: # add your discus identifier
+
+# Tracker
+analytics: UA-168825319-1 # Google Analytics
+
+# Build Settings
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jemoji
+
+paginate: 8
+paginate_path: "/page/:num"
+
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
