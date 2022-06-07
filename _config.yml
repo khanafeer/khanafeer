@@ -5,8 +5,6 @@ plugins:
   - jekyll/tagging
   - jekyll-pagebreak
 
-# Multiple bookshops can be used on one website,
-# or different production / staging locations.
 
 exclude:
   - postcss.config.js
@@ -16,7 +14,6 @@ include:
   - _cloudcannon
 
 # The rest of this array structure will be
-# populated by the bookshop-array-structures plugin.
 _array_structures:
   content_blocks:
     style: modal
