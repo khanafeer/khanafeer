@@ -1,76 +1,37 @@
 ---
-layout: default
+layout: main
 ---
-
-<div class="post-top">
-  <div class="container">
-    <div class="row">
-
-      {%if page.image %}
-      <div class="col col-6 col-d-12">
-        <div class="post-image">
-          <img loading="lazy" src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+<article class="article-page">
+  <div class="page-content">
+    {% if page.img %}
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src={{ "/assets/img/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
+        {% if page.fig-caption %}
+          <figcaption>{{page.fig-caption}}</figcaption>
+        {% endif %}
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    {% else %}
+    {% endif %}
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">{{page.title}}</h1>
+        <div class="page-date"><span>{{page.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      {{content | markdownify}}
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          {% for tag in page.tags %}
+            <a href="{{site.baseurl}}/tags#{{tag}}" class="tag">&#35; {{ tag }}</a>
+          {% endfor %}
         </div>
       </div>
-      {%endif %}
-
-      <div class="col col-6 col-d-12">
-        <div class="post__info">
-
-          {% if page.tags.size >= 1 %}
-          <div class="post-tags">
-            {% for tag in page.tags %}
-              <a href="{{ site.baseurl }}/tag/{{ tag | downcase }}" class="post-tags__tag">{{ tag }}</a>
-            {% endfor %}
-          </div>
-          {% endif %}
-
-
-          <h1 class="post__title">{{ page.title | escape }}</h1>
-
-          <div class="post__meta">
-            <div class="post__author-image">
-              <img loading="lazy" src="{{ site.data.author.author_image }}" alt="{{ site.data.author.author_name }}">
-            </div>
-
-            <div class="post__meta-bottom">
-              <div class="post__author">{{ site.data.author.author_name }}</div>
-              <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string
-                }}</time>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- begin post -->
-<div class="container animate">
-
-  <article class="post">
-
-    <div class="post__content">
-      {{ content }}
-    </div>
-
-    {% include share.html %}
-
-  </article>
-</div>
-<!-- end post -->
-
-<div class="container">
-  <div class="row">
-    <div class="col col-10 col-d-12 push-d-0 push-1">
-      {% include post-navigation.html %}
-    </div>
-  </div>
-</div>
-
-{% include related-posts.html %}
-
-{% if site.data.general_settings.disqus-identifier %}
-  {% include disqus-comments.html %}
-{% endif %}
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->

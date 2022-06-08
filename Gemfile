@@ -1,8 +1,9 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
+
+gem 'jekyll'
 
 group :jekyll_plugins do
-  gem 'jekyll-watch', :git => "https://github.com/CloudCannon/jekyll-watch"
-  gem 'jekyll-tagging'
   gem "jekyll-sitemap"
-  gem "jekyll-pagebreak", "~> 0.3"
+  gem "jekyll-paginate"
+  gem "jemoji"
 end
